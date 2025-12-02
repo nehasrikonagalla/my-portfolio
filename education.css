@@ -1,0 +1,210 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(120deg, #1e3c72, #2a5298, #1f4037, #99f2c8);
+  background-size: 400% 400%;
+  animation: bgAnimation 15s ease infinite;
+  color: #f4f4f4;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Background Gradient Animation */
+@keyframes bgAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #ff9966, hwb(263 10% 22%));
+  color: white;
+  border-radius: 0 0 40px 40px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  animation: fadeInDown 1.5s ease;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 12px;
+  text-shadow: 2px 2px 12px rgba(0,0,0,0.3);
+  animation: glowText 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowText {
+  from { text-shadow: 0 0 10px #ffdde1, 0 0 20px #ff6a00; }
+  to { text-shadow: 0 0 20px #ffdde1, 0 0 40px #ff6a00; }
+}
+
+header p {
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 50px auto;
+  animation: fadeInUp 1.5s ease;
+}
+
+/* Section Titles */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #ffdd59;
+  position: relative;
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 70%;
+  height: 4px;
+  background: #ffdd59;
+  border-radius: 3px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* About Section */
+.about {
+  background: rgba(255,255,255,0.1);
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 40px;
+  transition: transform 0.4s;
+}
+
+.about:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Education Cards */
+.edu-boxes {
+  display: grid;
+  gap: 25px;
+}
+
+.edu-card {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 30px;
+  border-radius: 18px;
+  border-left: 6px solid #ffdd59;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  transition: transform 0.5s, box-shadow 0.5s;
+  animation: slideIn 1s ease forwards;
+}
+
+.edu-card:nth-child(1) { border-left-color: #4facfe; }
+.edu-card:nth-child(2) { border-left-color: #ff6a00; }
+.edu-card:nth-child(3) { border-left-color: #43e97b; }
+
+.edu-card h3 {
+  margin-bottom: 10px;
+  color: #f9f9f9;
+  font-size: 1.3rem;
+}
+
+.edu-card p {
+  font-size: 1rem;
+  margin: 6px 0;
+  color: #e0e0e0;
+}
+
+.edu-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(255, 221, 89, 0.5);
+}
+
+/* Highlights */
+.highlights {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  margin-top: 30px;
+  backdrop-filter: blur(10px);
+}
+
+.highlights ul {
+  list-style: none;
+}
+
+.highlights ul li {
+  margin: 12px 0;
+  padding-left: 30px;
+  position: relative;
+  font-size: 1rem;
+  color: #f1f1f1;
+  animation: fadeInUp 1.2s ease;
+}
+
+.highlights ul li::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 18px;
+  color: #ffdd59;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background: #0f2027;
+  color: #ddd;
+  padding: 25px;
+  margin-top: 50px;
+  border-radius: 40px 40px 0 0;
+  font-size: 0.95rem;
+  animation: fadeIn 2s ease;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
